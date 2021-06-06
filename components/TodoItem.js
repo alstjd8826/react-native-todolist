@@ -12,15 +12,18 @@ import Swipeable from 'react-native-gesture-handler/Swipeable'
 const TodoItem = ({
     title,
     done,
+    remove,
+    toggle,
 }) => {
     return (
         <Swipeable
-        renderRightActions={()=> <DeleteButton/>}>
+        renderRightActions={()=> <DeleteButton onPress={remove}/>}>
             <View style={styles.container}>
                 <View style={styles.todo}>
                     <TouchableOpacity 
                         activeOpacity={0.8}
                         style={done ? styles.done : styles.check}
+                        onPress={toggle}
                     >
                         <FontAwesome name="check" color={done ? '#FFFFFF' : '#E0E0E0'} size={14} />
                     </TouchableOpacity>

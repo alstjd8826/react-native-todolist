@@ -4,11 +4,12 @@ import {
     Text,
     StyleSheet,
 } from 'react-native'
-const DeleteButton = () => {
+const DeleteButton = ({onPress}) => {
     return (
         <TouchableOpacity
             activeOpacity={0.8}
             style={styles.button}
+            onPress={onPress}
         >
             <Text style={styles.text}>
                 삭제

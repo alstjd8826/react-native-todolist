@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, TouchableOpacity,StyleSheet} from 'react-native'
+import {View, Text, TouchableOpacity,StyleSheet, Platform} from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 
 const SubHeader = () => {

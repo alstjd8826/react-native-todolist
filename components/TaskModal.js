@@ -3,7 +3,8 @@ import {
     View,
     TextInput,
     StyleSheet,
-    TouchableOpacity
+    TouchableOpacity,
+    Platform
 } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 import Modal from 'react-native-modal'
@@ -11,19 +12,29 @@ import Modal from 'react-native-modal'
  // avoidKeyboard 는 키보드 화면이 열렸을 때 화면이동 시켜주는 설정이다.
 const TaskModal = ({
     isVisible,
+    add,
+    hide,
 }) => {
+    let content = ''
     return (
         <Modal
             isVisible={isVisible}
             avoidKeyboard
             style={styles.modal}
+            onBackdropPress={hide}
         >
             <View style={styles.container}>
                 <TextInput
+                    onChangeText={(text)=>{
+                        content = text
+                    }}
                     placeholder="Where are you going todo?"
                 >
                 </TextInput>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity 
+                    style={styles.button}
+                    onPress={() => add(content)}
+                    >
                     <FontAwesome name="plus" color='#F5C630' size={20} />
                 </TouchableOpacity>
             </View>

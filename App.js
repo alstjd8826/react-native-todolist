@@ -47,6 +47,12 @@ export default class App extends React.Component {
   save = () => {
     AsyncStorage.setItem("@todos:state", JSON.stringify(this.state));
   };
+  // updateRef = (ref) => {
+  //   this._swipeableRow = ref;
+  // };
+  // close = () => {
+  //   this._swipeableRow.close();
+  // };
   render() {
     return (
       <SafeAreaView style={styles.container}>

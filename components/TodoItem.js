@@ -4,6 +4,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import DeleteButton from "./DeleteButton";
 import PinButton from "./PinButton";
 import Swipeable from "react-native-gesture-handler/Swipeable";
+
 //TouchableOpacity를 사용하는 이유: Button 컴포넌트는 안드로이드와 ios에서 다르게 보이기 때문에 관리하는데에 어려움이 있다
 const TodoItem = ({ title, done, checkPin, remove, toggle, pin, unpin }) => {
   return (
@@ -32,6 +33,7 @@ const TodoItem = ({ title, done, checkPin, remove, toggle, pin, unpin }) => {
     </Swipeable>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     paddingLeft: 16,

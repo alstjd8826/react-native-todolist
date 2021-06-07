@@ -6,12 +6,21 @@ import {
   StyleSheet,
   Platform,
 } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, AntDesign } from "@expo/vector-icons";
 
 const SubHeader = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>메모</Text>
+    </View>
+  );
+};
+
+const SubPinHeader = () => {
+  return (
+    <View style={styles.container}>
+      <AntDesign name="pushpin" size={20} color="black" />
+      <Text style={styles.title}> 고정된 메모</Text>
     </View>
   );
 };
@@ -22,6 +31,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     marginLeft: 22,
     marginRight: 16,
+    flexDirection: "row",
   },
   title: {
     color: "#212121",
@@ -48,4 +58,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SubHeader;
+export { SubHeader, SubPinHeader };
